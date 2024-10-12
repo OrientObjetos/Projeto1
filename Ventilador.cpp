@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include "Atuador.cpp"
 using namespace std;
@@ -18,8 +19,9 @@ class Ventilador: public Atuador{
       return true;
     }
       
-    else if(velocidade > v_max){
+    else if (velocidade > v_max){
       return false;
     }
+    return false;
   }
 };

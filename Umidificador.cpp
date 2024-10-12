@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include "Atuador.cpp"
 using namespace std;

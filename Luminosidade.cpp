@@ -1,22 +1,26 @@
+#pragma once
 #include <iostream>
 #include "Sensor.cpp"
 using namespace std;
 
 class Luminosidade: public Sensor{
-  protected:
-  int limiarClaridade;
+  private:
+    int limiarClaridade;
 
   public:
-  void setLimiarClaridade(int limiar){
-    limiarClaridade = limiar;
-  }
+    Luminosidade(string nome, bool ligado, bool conectado, int valor, int min, int max):
+      Sensor(nome, ligado, conectado, valor, min, max) {}
 
-  bool estaClaro(){
-    if(this -> valor >= limiarClaridade){
-      return true;
+    void setLimiarClaridade(int limiar){
+      limiarClaridade = limiar;
     }
-    else{
-      return false;
+  
+    bool estaClaro(){
+      if(this -> valor >= limiarClaridade){
+        return true;
+      }
+      else{
+        return false;
+      }
     }
-  }
 };
