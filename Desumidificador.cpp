@@ -4,14 +4,18 @@
 using namespace std;
 
 class Desumidificador: public Atuador{
-  bool setConfiguracao(int ){
-    if(valor > 128){
-      void ligar();
-      return true;
+  public:
+    Desumidificador(string nome, bool ligado, bool conectado, int valor):
+      Atuador(nome, ligado, conectado, valor){}
+
+    bool setConfiguracao(int valor){
+      if(valor > 128){
+        ligar();
+        return true;
+      }
+      else{
+        desligar();
+        return false;
+      }
     }
-    else{
-      void desligar();
-      return false;
-    }
-  }
 };
