@@ -4,11 +4,15 @@
 using namespace std;
 
 class Atuador: public Componente{
-  public:
-    Atuador(string nome, bool ligado, bool conectado, int valor):
-      Componente(nome, ligado, conectado, valor){}
+  protected:
+    int min;
+    int max;
 
-    virtual bool setValor(int valor){
+  public:
+    Atuador(string nome, bool ligado, bool conectado, int valor, int min, int max):
+      Componente(nome, ligado, conectado, valor), min{min}, max{max} {}
+
+    bool setValor(int valor){
       if(valor < 0 || valor > 255){
         return false;
       }
@@ -16,5 +20,9 @@ class Atuador: public Componente{
         this -> valor = valor;
         return true;
       }
+    }
+
+    virtual void print(){
+      cout << nome << ": Valor atual = " << valor << endl; // Método genérico para imprimir o valor recebido do sensor
     }
 };

@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <iomanip>
 #include "Sensor.cpp"
 using namespace std;
 
@@ -9,7 +10,7 @@ class Temperatura: public Sensor{
       Sensor(nome, ligado, conectado, valor, min, max) {}
 
     float getTemperaturaEmC(){
-      return (50 * valor) / 255; // conversão do valor de 0 a 255 para 0 a 50°C
+      return (50.00 * valor) / 255; // conversão do valor de 0 a 255 para 0 a 50°C
     }
 
     float getTemperaturaEmF(){
@@ -21,6 +22,7 @@ class Temperatura: public Sensor{
     }
 
     virtual void print(){
+      cout << fixed << setprecision(2);
       cout << "Temperatura em Celsius: " << getTemperaturaEmC() << "°C" << endl;
       cout << "Temperatura em Farenheit: " << getTemperaturaEmF() << "°F" << endl;
       cout << "Temperatura em Kelvin: " << getTemperaturaEmK()<< "K" << endl;
