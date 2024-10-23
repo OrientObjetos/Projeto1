@@ -33,7 +33,7 @@ class Sala{
       sensor_lum{"Sensor de luminosidade", true, true, 0, minL, maxL},
       sensor_umi{"Sensor de umidade", true, true, 0, minU, maxU},
       vent{"Ventilador", true, true, 0, minT, maxT},
-      lamp{"Lampada", true, true, 0, minL, maxL},
+      lamp{"Lampada", true, true, 0, minL, maxL, luz},
       umi{"Umidificador", true, true, 0, minU, maxU},
       desumi{"Desumidificador", true, true, 0, minU, maxU}{
       

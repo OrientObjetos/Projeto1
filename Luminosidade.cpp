@@ -16,6 +16,9 @@ class Luminosidade: public Sensor{
     }
 
     bool estaClaro(){
+      if(limiarClaridade == 30){
+        return false;
+      }
       if(this -> valor >= limiarClaridade){
         return true;
       }
