@@ -12,11 +12,16 @@ int main() {
   salas[1] = &s2;
   salas[2] = &s3;
   
-  for(int i = 0; i < 3; i++){
+  for(int i = 0; i < 1440; i++){
     cout << "---------------------------------------------------" << endl;
-    cout << "Sala " << i+1 << endl;
-    salas[i] -> atualizarSensores(); // Atualiza e imprime os valores dos sensores
-    salas[i] -> atualizarAtuadores(); // Atualiza os atuadores com base nos sensores e imprime o estado dos atuadores
+    cout << i+1 << "° atualização" << endl;
+    for(int j = 0; j <= 2; j++){
+      cout << endl;
+      cout << "Sala " << j+1 << endl;
+      salas[j] -> atualizarSensores(); // Atualiza e imprime os valores dos sensores
+      salas[j] -> atualizarAtuadores(); // Atualiza os atuadores com base nos sensores e imprime o estado dos atuadores
+    }
   }
+
   return 0;
 }
