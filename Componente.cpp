@@ -4,10 +4,10 @@ using namespace std;
 
 class Componente{
   protected:
-    int valor;
+    string nome;
     bool ligado;       // saber se o componente está ligado
     bool conectado;    // saber se o componente está conectado a rede (usar try catch)
-    string nome;
+    int valor;
 
   public:
     Componente(string nome, bool ligado, bool conectado, int valor):

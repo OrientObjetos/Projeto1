@@ -14,13 +14,22 @@ class Luminosidade: public Sensor{
     void setLimiarClaridade(int limiar){
       limiarClaridade = limiar;
     }
-  
+
     bool estaClaro(){
       if(this -> valor >= limiarClaridade){
         return true;
       }
       else{
         return false;
+      }
+    }
+
+    virtual void print(){
+      if (estaClaro() == true){
+        cout << "Luminosidade: " << this -> valor << " - Claro" << endl;
+      }
+      else{
+        cout << "Luminosidade: " << this -> valor << " - Escuro" << endl;
       }
     }
 };

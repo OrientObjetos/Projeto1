@@ -17,12 +17,12 @@ class Ventilador: public Atuador{
         this->desligar();
         return true;
       }
-        
+
       else if(velocidade > 0 && velocidade < v_min){
         this->valor = v_min;
         return true;
       }
-        
+
       else if (velocidade > v_max){
         return false;
       }

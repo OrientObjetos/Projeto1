@@ -15,4 +15,8 @@ class Umidade: public Sensor{
       this -> u = (70 * valor + 5100) / 255; // conversão do valor de 0 a 255 para 20 a 90%
       return this -> u;
     }
+
+    virtual void print(){
+      cout << "Umidade relativa: " << getUmidadeRelativa() << "%" << endl;
+    }
 };
