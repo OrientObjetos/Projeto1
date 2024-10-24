@@ -16,7 +16,7 @@ class Sensor: public Componente{
 
     int getValor(){
       this -> valor = (min - 30) + rand() % (max - min + 61); // Gera um valor aleatório dentro dos limites, podendo gerar um pouco acima ou um pouco abaixo
-      cout << nome << ": Valor gerado = " << this->valor << endl;
+      cout << nome << ": Valor lido = " << this->valor << endl;
       return this -> valor;
     }
 
